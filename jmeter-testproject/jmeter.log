@@ -1,0 +1,49 @@
+2018-11-29 11:29:36,295 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2018-11-29 11:29:36,330 INFO o.a.j.JMeter: Loading user properties from: C:\Users\Ian.Gomes\Documents\jmeter\bin\user.properties
+2018-11-29 11:29:36,341 INFO o.a.j.JMeter: Loading system properties from: C:\Users\Ian.Gomes\Documents\jmeter\bin\system.properties
+2018-11-29 11:29:36,350 INFO o.a.j.JMeter: Copyright (c) 1998-2018 The Apache Software Foundation
+2018-11-29 11:29:36,350 INFO o.a.j.JMeter: Version 5.0 r1840935
+2018-11-29 11:29:36,351 INFO o.a.j.JMeter: java.version=1.8.0_191
+2018-11-29 11:29:36,351 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2018-11-29 11:29:36,351 INFO o.a.j.JMeter: os.name=Windows 10
+2018-11-29 11:29:36,351 INFO o.a.j.JMeter: os.arch=amd64
+2018-11-29 11:29:36,351 INFO o.a.j.JMeter: os.version=10.0
+2018-11-29 11:29:36,352 INFO o.a.j.JMeter: file.encoding=Cp1252
+2018-11-29 11:29:36,352 INFO o.a.j.JMeter: Max memory     =1073741824
+2018-11-29 11:29:36,352 INFO o.a.j.JMeter: Available Processors =4
+2018-11-29 11:29:36,362 INFO o.a.j.JMeter: Default Locale=English (EN)
+2018-11-29 11:29:36,362 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2018-11-29 11:29:36,363 INFO o.a.j.JMeter: JMeterHome=C:\Users\Ian.Gomes\Documents\jmeter
+2018-11-29 11:29:36,363 INFO o.a.j.JMeter: user.dir  =C:\Users\Ian.Gomes\Documents\GitHub\QA-Performance\jmeter-testproject
+2018-11-29 11:29:36,363 INFO o.a.j.JMeter: PWD       =C:\Users\Ian.Gomes\Documents\GitHub\QA-Performance\jmeter-testproject
+2018-11-29 11:29:40,874 INFO o.a.j.JMeter: IP: 10.0.75.1 Name: DESKTOP-O7EAJPJ FullName: DESKTOP-O7EAJPJ
+2018-11-29 11:29:41,507 INFO o.a.j.g.a.LookAndFeelCommand: Installing Darcula LAF
+2018-11-29 11:29:41,551 INFO o.a.j.g.a.LookAndFeelCommand: Using look and feel: com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel [Darcula]
+2018-11-29 11:29:41,552 INFO o.a.j.JMeter: Setting LAF to: com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel
+2018-11-29 11:29:41,592 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2018-11-29 11:29:42,606 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2018-11-29 11:29:42,606 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2018-11-29 11:29:45,519 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-11-29 11:29:45,520 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-11-29 11:29:45,520 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-11-29 11:29:45,521 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-11-29 11:29:45,521 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2018-11-29 11:29:45,521 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2018-11-29 11:29:46,473 INFO o.a.j.e.KeyToolUtils: keytool found at 'keytool'
+2018-11-29 11:29:46,475 INFO o.a.j.p.h.p.ProxyControl: HTTP(S) Test Script Recorder SSL Proxy will use keys that support embedded 3rd party resources in file C:\Users\Ian.Gomes\Documents\jmeter\bin\proxyserver.jks
+2018-11-29 11:29:46,689 INFO o.a.j.s.FileServer: Default base='C:\Users\Ian.Gomes\Documents\GitHub\QA-Performance\jmeter-testproject'
+2018-11-29 11:29:48,355 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2018-11-29 11:29:48,355 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2018-11-29 11:29:48,355 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2018-11-29 11:29:48,355 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2018-11-29 11:30:09,989 INFO o.a.j.g.a.Load: Loading file: C:\Users\Ian.Gomes\Documents\GitHub\QA-Performance\velo_performance_v2.0\src\test\jmeter\mortgage_banking_api\MortgageBanking.jmx
+2018-11-29 11:30:09,990 INFO o.a.j.s.FileServer: Set new base='C:\Users\Ian.Gomes\Documents\GitHub\QA-Performance\velo_performance_v2.0\src\test\jmeter\mortgage_banking_api'
+2018-11-29 11:30:10,238 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2018-11-29 11:30:10,283 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2018-11-29 11:30:10,285 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2018-11-29 11:30:10,289 INFO o.a.j.s.SaveService: Loading file: C:\Users\Ian.Gomes\Documents\GitHub\QA-Performance\velo_performance_v2.0\src\test\jmeter\mortgage_banking_api\MortgageBanking.jmx
+2018-11-29 11:30:10,695 INFO o.a.j.s.FileServer: Set new base='C:\Users\Ian.Gomes\Documents\GitHub\QA-Performance\velo_performance_v2.0\src\test\jmeter\mortgage_banking_api'
+2018-11-29 11:31:31,390 INFO o.a.j.g.a.Load: Loading file: C:\Users\Ian.Gomes\Documents\GitHub\QA-Performance\velo_performance_v2.0\src\test\jmeter\online_banking\OnlineBanking.jmx
+2018-11-29 11:31:31,391 INFO o.a.j.s.FileServer: Set new base='C:\Users\Ian.Gomes\Documents\GitHub\QA-Performance\velo_performance_v2.0\src\test\jmeter\online_banking'
+2018-11-29 11:31:31,391 INFO o.a.j.s.SaveService: Loading file: C:\Users\Ian.Gomes\Documents\GitHub\QA-Performance\velo_performance_v2.0\src\test\jmeter\online_banking\OnlineBanking.jmx
+2018-11-29 11:31:31,644 INFO o.a.j.s.FileServer: Set new base='C:\Users\Ian.Gomes\Documents\GitHub\QA-Performance\velo_performance_v2.0\src\test\jmeter\online_banking'

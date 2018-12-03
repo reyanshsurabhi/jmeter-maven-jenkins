@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain"></stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">50</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">48</stringProp>
+        <longProp name="ThreadGroup.start_time">1370726934000</longProp>
+        <longProp name="ThreadGroup.end_time">1370726934000</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">300</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <RecordingController guiclass="RecordController" testclass="RecordingController" testname="Recording Controller" enabled="true"/>
+        <hashTree>
+          <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+            <collectionProp name="AuthManager.auth_list">
+              <elementProp name="" elementType="Authorization">
+                <stringProp name="Authorization.url">https://devopenapi.velobank.com/api/system/promotions/IOD02KZD/verify</stringProp>
+                <stringProp name="Authorization.username">${AUTH_LOGIN}</stringProp>
+                <stringProp name="Authorization.password">${AUTH_PASSWORD}</stringProp>
+                <stringProp name="Authorization.domain"></stringProp>
+                <stringProp name="Authorization.realm"></stringProp>
+                <stringProp name="Authorization.mechanism">KERBEROS</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Authorization">
+                <stringProp name="Authorization.url">https://devopenapi.velobank.com/api/system/promotions/IOD02KZD</stringProp>
+                <stringProp name="Authorization.username">${AUTH_LOGIN}</stringProp>
+                <stringProp name="Authorization.password">${AUTH_PASSWORD}</stringProp>
+                <stringProp name="Authorization.domain"></stringProp>
+                <stringProp name="Authorization.realm"></stringProp>
+                <stringProp name="Authorization.mechanism">KERBEROS</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Authorization">
+                <stringProp name="Authorization.url">https://devopenapi.velobank.com/api/system/crm/case</stringProp>
+                <stringProp name="Authorization.username">${AUTH_LOGIN}</stringProp>
+                <stringProp name="Authorization.password">${AUTH_PASSWORD}</stringProp>
+                <stringProp name="Authorization.domain"></stringProp>
+                <stringProp name="Authorization.realm"></stringProp>
+                <stringProp name="Authorization.mechanism">KERBEROS</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Authorization">
+                <stringProp name="Authorization.url">https://devopenapi.velobank.com/api/system/customerverificationnra/documentdownload/9b22b4c0-b88c-40a7-a9f2-5248a3b9d226/City</stringProp>
+                <stringProp name="Authorization.username">Bidun_Demo_API</stringProp>
+                <stringProp name="Authorization.password">VeloBank2018!</stringProp>
+                <stringProp name="Authorization.domain"></stringProp>
+                <stringProp name="Authorization.realm"></stringProp>
+              </elementProp>
+            </collectionProp>
+          </AuthManager>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1 /api/system/promotions/IOD02KZD/verify" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">devopenapi.velobank.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/system/promotions/IOD02KZD/verify</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">dc9af57c-92c8-4f85-8caa-f2f76a6c7485</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="cache-control" elementType="Header">
+                  <stringProp name="Header.name">cache-control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="accept-encoding" elementType="Header">
+                  <stringProp name="Header.name">accept-encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.3.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>true</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <sentBytes>true</sentBytes>
+                  <threadCounts>true</threadCounts>
+                  <idleTime>true</idleTime>
+                  <connectTime>true</connectTime>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="2 /api/system/promotions/IOD02KZD" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;Promotion&quot;: {&#xd;
+    &quot;PromoCode&quot;: &quot;IOD02KZD&quot;,&#xd;
+    &quot;Status&quot;: &quot;New&quot;&#xd;
+  },&#xd;
+  &quot;OnboardingInvitation&quot;: {&#xd;
+    &quot;FirstName&quot;: &quot;Rajkumar&quot;,&#xd;
+    &quot;LastName&quot;: &quot;Surabhi&quot;,&#xd;
+    &quot;EmailAddress&quot;: &quot;mailtorajuit@gmail.com&quot;,&#xd;
+    &quot;PhoneNumber&quot;: &quot;(994)-590-0227&quot;&#xd;
+  },&#xd;
+  &quot;RequestUUID&quot;: &quot;4353454353453535&quot;&#xd;
+}&#xd;
+</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">devopenapi.velobank.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/system/promotions/IOD02KZD</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">c440d56d-ddcf-4a30-a5a0-253567dc8be5</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="cache-control" elementType="Header">
+                  <stringProp name="Header.name">cache-control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="accept-encoding" elementType="Header">
+                  <stringProp name="Header.name">accept-encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.3.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>true</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <sentBytes>true</sentBytes>
+                  <threadCounts>true</threadCounts>
+                  <idleTime>true</idleTime>
+                  <connectTime>true</connectTime>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="3 /api/system/addressvalidator/addressverify" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;StreetAddress1&quot;: &quot;9300 Flair Drive&quot;,&#xd;
+  &quot;StreetAddress2&quot;: &quot;Suite 301&quot;,&#xd;
+  &quot;City&quot;: &quot;El Monte&quot;,&#xd;
+  &quot;State&quot;: &quot;CA&quot;,&#xd;
+  &quot;Zip&quot;: &quot;91731&quot;,&#xd;
+  &quot;Country&quot;: &quot;USA&quot;,&#xd;
+  &quot;RequestUUID&quot;: &quot;34534535345353&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">devopenapi.velobank.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/system/addressvalidator/addressverify</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">b45093cb-293f-48b2-9f27-826ec8b28e84</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="cache-control" elementType="Header">
+                  <stringProp name="Header.name">cache-control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="accept-encoding" elementType="Header">
+                  <stringProp name="Header.name">accept-encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.3.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>true</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <sentBytes>true</sentBytes>
+                  <threadCounts>true</threadCounts>
+                  <idleTime>true</idleTime>
+                  <connectTime>true</connectTime>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="4 /api/system/crm/case" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;Request&quot;: &quot;{\&quot;CustomerInformation\&quot;: {\&quot;FirstName\&quot;: \&quot;John\&quot;,\&quot;LastName\&quot;: \&quot;Doe\&quot;,\&quot;StreetAddress1\&quot;: \&quot;9300 Flair Dr\&quot;,\&quot;StreetAddress2\&quot;: \&quot;300\&quot;,\&quot;City\&quot;: \&quot;El Monte\&quot;,\&quot;State\&quot;: \&quot;CA\&quot;,\&quot;Zip\&quot;: \&quot;91731\&quot;,\&quot;CountryCode\&quot;: \&quot;US\&quot;,\&quot;Email\&quot;: \&quot;abc@xyz.com\&quot;,\&quot;PrimaryPhoneNumber\&quot;: \&quot;6662367234\&quot;,\&quot;Gender\&quot;: \&quot;Male\&quot;,\&quot;PEP\&quot;: \&quot;true\&quot;,\&quot;YearOfBirth\&quot;: \&quot;1980\&quot;,\&quot;Occupation\&quot;: \&quot;AdminManagerial\&quot;,\&quot;CitizenshipCode\&quot;: \&quot;US\&quot;,\&quot;TaxNumber\&quot;: \&quot;734561234\&quot;},\&quot;TrueId\&quot;:{\&quot;DocAuthResult\&quot;:\&quot;Failed\&quot;,\&quot;DocAuthResultRescan\&quot;:\&quot;Failed\&quot;,\&quot;DocumentExpired\&quot;:\&quot;True\&quot;,\&quot;DocumentType\&quot;:\&quot;DriversLicense\&quot;,\&quot;TrueIdResponse\&quot;:[{\&quot;Status\&quot;:{\&quot;ConversationId\&quot;:\&quot;31000100486965\&quot;,\&quot;RequestId\&quot;:\&quot;293264255\&quot;,\&quot;TransactionStatus\&quot;:\&quot;passed\&quot;,\&quot;Reference\&quot;:\&quot;payload.RequestUUID\&quot;},\&quot;Products\&quot;:[{\&quot;ProductType\&quot;:\&quot;TrueID\&quot;,\&quot;ExecutedStepName\&quot;:\&quot;True_ID_Step\&quot;,\&quot;ProductConfigurationName\&quot;:\&quot;TrueID_Flow\&quot;,\&quot;ProductStatus\&quot;:\&quot;pass\&quot;}],\&quot;PassThroughs\&quot;:[{\&quot;Type\&quot;:\&quot;true.id\&quot;,\&quot;Data\&quot;:{\&quot;IDAuthResultResponse\&quot;:{\&quot;Header\&quot;:{\&quot;TransactionId\&quot;:\&quot;2049101R274531\&quot;},\&quot;Success\&quot;:true,\&quot;AuthenticationResult\&quot;:{\&quot;DocumentName\&quot;:\&quot;Connecticut(CT)DriverLicense\&quot;,\&quot;DocAuthResult\&quot;:\&quot;Failed\&quot;,\&quot;DocIssuerCode\&quot;:\&quot;CT\&quot;,\&quot;DocIssuerName\&quot;:\&quot;Connecticut\&quot;,\&quot;DocClassCode\&quot;:\&quot;DriversLicense\&quot;,\&quot;DocClass\&quot;:\&quot;DriversLicense\&quot;,\&quot;DocClassName\&quot;:\&quot;DriversLicense\&quot;,\&quot;DocIsGeneric\&quot;:\&quot;false\&quot;,\&quot;DocIssue\&quot;:\&quot;2009\&quot;,\&quot;DocIssueType\&quot;:\&quot;DriverLicense\&quot;,\&quot;DocSize\&quot;:\&quot;ID1\&quot;,\&quot;ClassificationMode\&quot;:\&quot;Automatic\&quot;,\&quot;OrientationChanged\&quot;:\&quot;false\&quot;,\&quot;PresentationChanged\&quot;:\&quot;false\&quot;,\&quot;FullName\&quot;:\&quot;EVANMMOZINGO\&quot;,\&quot;Sex\&quot;:\&quot;Male\&quot;,\&quot;Age\&quot;:\&quot;28\&quot;,\&quot;DOB\&quot;:{\&quot;Year\&quot;:1989,\&quot;Month\&quot;:9,\&quot;Day\&quot;:11},\&quot;ExpirationDate\&quot;:{\&quot;Year\&quot;:2017,\&quot;Month\&quot;:9,\&quot;Day\&quot;:11},\&quot;Portrait\&quot;:\&quot;\&quot;,\&quot;Signature\&quot;:\&quot;\&quot;,\&quot;Alerts\&quot;:{\&quot;IDAuthAlertData\&quot;:[{\&quot;AlertID\&quot;:\&quot;7f61f39f-7a5f-4b8b-958a-be32d9c9d20b\&quot;,\&quot;AlertName\&quot;:\&quot;VisiblePattern\&quot;,\&quot;AlertKey\&quot;:\&quot;VisiblePattern\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Failed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Verifiedthepresenceofapatternonthevisibleimage.\&quot;,\&quot;Regions\&quot;:{\&quot;Region\&quot;:[\&quot;StylizedDOBLabel\&quot;]}},{\&quot;AlertID\&quot;:\&quot;26e34e11-e479-409a-93af-f09164bded35\&quot;,\&quot;AlertName\&quot;:\&quot;VisiblePattern\&quot;,\&quot;AlertKey\&quot;:\&quot;VisiblePattern\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Failed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Verifiedthepresenceofapatternonthevisibleimage.\&quot;,\&quot;Regions\&quot;:{\&quot;Region\&quot;:[\&quot;Inches\&quot;]}},{\&quot;AlertID\&quot;:\&quot;6665e84d-6ee1-4d50-8dc5-dc5a541ade6c\&quot;,\&quot;AlertName\&quot;:\&quot;VisiblePattern\&quot;,\&quot;AlertKey\&quot;:\&quot;VisiblePattern\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Failed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Verifiedthepresenceofapatternonthevisibleimage.\&quot;,\&quot;Regions\&quot;:{\&quot;Region\&quot;:[\&quot;ExpiresLabel\&quot;]}},{\&quot;AlertID\&quot;:\&quot;31725c47-d8f1-47ef-88ca-37bea1b27b74\&quot;,\&quot;AlertName\&quot;:\&quot;VisiblePattern\&quot;,\&quot;AlertKey\&quot;:\&quot;VisiblePattern\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Failed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Verifiedthepresenceofapatternonthevisibleimage.\&quot;,\&quot;Regions\&quot;:{\&quot;Region\&quot;:[\&quot;BackgroundCenter\&quot;]}},{\&quot;AlertID\&quot;:\&quot;e72d4812-117d-4e15-bd98-a2f03ef40939\&quot;,\&quot;AlertName\&quot;:\&quot;1DControlNumberValid\&quot;,\&quot;AlertKey\&quot;:\&quot;1DControlNumberValid\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Failed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Checkswhetherthe1Dbarcodeisindicativeofknown-fakedocuments.\&quot;},{\&quot;AlertID\&quot;:\&quot;dd04c339-4957-424f-a529-37d2c4b8afe8\&quot;,\&quot;AlertName\&quot;:\&quot;2DBarcodeContent\&quot;,\&quot;AlertKey\&quot;:\&quot;2DBarcodeContent\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Failed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Checkedthecontentsofthetwo-dimensionalbarcodeonthedocument.\&quot;},{\&quot;AlertID\&quot;:\&quot;5a7e7486-f08c-4903-9a14-16447d2a8b97\&quot;,\&quot;AlertName\&quot;:\&quot;ControlNumberCrosscheck\&quot;,\&quot;AlertKey\&quot;:\&quot;ControlNumberCrosscheck\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Caution\&quot;,\&quot;AlertDescription\&quot;:\&quot;Comparethemachine-readablecontrolnumberfieldtothehuman-readabledocumentnumberfield.\&quot;},{\&quot;AlertID\&quot;:\&quot;a411418d-839b-474c-8ef6-6b4d65fe66e1\&quot;,\&quot;AlertName\&quot;:\&quot;DocumentExpired\&quot;,\&quot;AlertKey\&quot;:\&quot;DocumentExpired\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Attention\&quot;,\&quot;AlertDescription\&quot;:\&quot;Checkedifthedocumentisexpired.\&quot;},{\&quot;AlertID\&quot;:\&quot;7234cc64-e21d-42b4-8f0d-f625cb7b71a2\&quot;,\&quot;AlertName\&quot;:\&quot;2DBarcodeRead\&quot;,\&quot;AlertKey\&quot;:\&quot;2DBarcodeRead\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Verifiedthatthetwo-dimensionalbarcodeonthedocumentwasreadsuccessfully.\&quot;},{\&quot;AlertID\&quot;:\&quot;b89e4f08-e4f2-4a93-ae91-7a140cb1c15c\&quot;,\&quot;AlertName\&quot;:\&quot;BirthDateCrosscheck\&quot;,\&quot;AlertKey\&quot;:\&quot;BirthDateCrosscheck\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Comparethemachine-readablebirthdatefieldtothehuman-readablebirthdatefield.\&quot;},{\&quot;AlertID\&quot;:\&quot;7e085ee6-a7e3-43d0-a239-2ac3c328fc80\&quot;,\&quot;AlertName\&quot;:\&quot;BirthDateValid\&quot;,\&quot;AlertKey\&quot;:\&quot;BirthDateValid\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Verifiedthatthebirthdateisvalid.\&quot;},{\&quot;AlertID\&quot;:\&quot;b222e1af-22b2-444a-a771-1e783773a43d\&quot;,\&quot;AlertName\&quot;:\&quot;DocumentClassification\&quot;,\&quot;AlertKey\&quot;:\&quot;DocumentClassification\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Verifiedthatthetypeofdocumentissupportedandisabletobefullyauthenticated.\&quot;},{\&quot;AlertID\&quot;:\&quot;a502f45c-7f65-4bdb-b91e-3231035bf8cb\&quot;,\&quot;AlertName\&quot;:\&quot;DocumentCrosscheckAggregation\&quot;,\&quot;AlertKey\&quot;:\&quot;DocumentCrosscheckAggregation\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Comparedthemachine-readablefieldstothehuman-readablefields.\&quot;},{\&quot;AlertID\&quot;:\&quot;30012325-e722-46ea-92f3-79f6e56bbd13\&quot;,\&quot;AlertName\&quot;:\&quot;DocumentNumberCrosscheck\&quot;,\&quot;AlertKey\&quot;:\&quot;DocumentNumberCrosscheck\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Comparethemachine-readabledocumentnumberfieldtothehuman-readabledocumentnumberfield.\&quot;},{\&quot;AlertID\&quot;:\&quot;8ea470d6-7317-47f6-ae13-30b516b08697\&quot;,\&quot;AlertName\&quot;:\&quot;ExpirationDateCrosscheck\&quot;,\&quot;AlertKey\&quot;:\&quot;ExpirationDateCrosscheck\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Comparethemachine-readableexpirationdatefieldtothehuman-readableexpirationdatefield.\&quot;},{\&quot;AlertID\&quot;:\&quot;990beb5d-3126-41b5-9a46-6c6f609e35d8\&quot;,\&quot;AlertName\&quot;:\&quot;ExpirationDateValid\&quot;,\&quot;AlertKey\&quot;:\&quot;ExpirationDateValid\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Verifiedthattheexpirationdateisvalid.\&quot;},{\&quot;AlertID\&quot;:\&quot;3481b0d1-ed7d-4d0a-a5f0-623bd8120f33\&quot;,\&quot;AlertName\&quot;:\&quot;FullNameCrosscheck\&quot;,\&quot;AlertKey\&quot;:\&quot;FullNameCrosscheck\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Comparethemachine-readablefullnamefieldtothehuman-readablefullnamefield.\&quot;},{\&quot;AlertID\&quot;:\&quot;7577ba74-3910-49a1-b567-d84235f09c77\&quot;,\&quot;AlertName\&quot;:\&quot;IssueDateValid\&quot;,\&quot;AlertKey\&quot;:\&quot;IssueDateValid\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Verifiedthattheissuedateisvalid.\&quot;},{\&quot;AlertID\&quot;:\&quot;8a5f9d65-e3fb-47c1-bcbe-d0033d289b61\&quot;,\&quot;AlertName\&quot;:\&quot;LayoutValid\&quot;,\&quot;AlertKey\&quot;:\&quot;LayoutValid\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Verifiedthatthelayoutofthedocumentiscorrect.\&quot;,\&quot;Regions\&quot;:{\&quot;Region\&quot;:[\&quot;2DBarcodeBottomLeft\&quot;,\&quot;2DBarcodeTopLeft\&quot;]}},{\&quot;AlertID\&quot;:\&quot;e742c56b-79cb-4352-b99e-06e6bb51c85a\&quot;,\&quot;AlertName\&quot;:\&quot;SexCrosscheck\&quot;,\&quot;AlertKey\&quot;:\&quot;SexCrosscheck\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Comparethemachine-readablesexfieldtothehuman-readablesexfield.\&quot;},{\&quot;AlertID\&quot;:\&quot;1396841c-a798-4b2a-8a61-f8922e31f8c6\&quot;,\&quot;AlertName\&quot;:\&quot;VisibleColorResponse\&quot;,\&quot;AlertKey\&quot;:\&quot;VisibleColorResponse\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Verifiedthecolorresponseofanelementonthevisibleimage.\&quot;,\&quot;Regions\&quot;:{\&quot;Region\&quot;:[\&quot;BackgroundSalmon\&quot;]}},{\&quot;AlertID\&quot;:\&quot;9a1880c7-3286-42e9-9e79-74c3496ad315\&quot;,\&quot;AlertName\&quot;:\&quot;VisiblePattern\&quot;,\&quot;AlertKey\&quot;:\&quot;VisiblePattern\&quot;,\&quot;AuthenticationResult\&quot;:\&quot;Passed\&quot;,\&quot;AlertDescription\&quot;:\&quot;Verifiedthepresenceofapatternonthevisibleimage.\&quot;,\&quot;Regions\&quot;:{\&quot;Region\&quot;:[\&quot;BackgroundBoat\&quot;]}}]},\&quot;Fields\&quot;:{\&quot;IDAuthFieldData\&quot;:[{\&quot;Address\&quot;:\&quot;1MUDRYFARMRBRISTOL,CT02809-2366\&quot;},{\&quot;City\&quot;:\&quot;BRISTOL\&quot;},{\&quot;AddressLine1\&quot;:\&quot;1MUDRYFARMRD\&quot;},{\&quot;PostalCode\&quot;:\&quot;02809-2366\&quot;},{\&quot;State\&quot;:\&quot;CT\&quot;},{\&quot;DOB\&quot;:{\&quot;Year\&quot;:1989,\&quot;Month\&quot;:9,\&quot;Day\&quot;:11}},{\&quot;ControlNumber\&quot;:\&quot;demoa11230009\&quot;},{\&quot;DocumentClassName\&quot;:\&quot;DriversLicense\&quot;},{\&quot;DocumentNumber\&quot;:\&quot;096760377\&quot;},{\&quot;ExpirationDate\&quot;:{\&quot;Year\&quot;:2017,\&quot;Month\&quot;:9,\&quot;Day\&quot;:11}},{\&quot;FirstName\&quot;:\&quot;EVAN\&quot;},{\&quot;FullName\&quot;:\&quot;EVANMMOZINGO\&quot;},{\&quot;GivenName\&quot;:\&quot;EVANM\&quot;},{\&quot;Height\&quot;:\&quot;5&apos;9\&quot;},{\&quot;IssueDate\&quot;:{\&quot;Year\&quot;:2010,\&quot;Month\&quot;:10,\&quot;Day\&quot;:12}},{\&quot;IssuingStateCode\&quot;:\&quot;CT\&quot;},{\&quot;IssuingStateName\&quot;:\&quot;Connecticut\&quot;},{\&quot;LicenseClass\&quot;:\&quot;D\&quot;},{\&quot;MiddleName\&quot;:\&quot;M\&quot;},{\&quot;Sex\&quot;:\&quot;M\&quot;},{\&quot;Surname\&quot;:\&quot;MOZINGO\&quot;}]}}}}}]}]},\&quot;PinPointResponse\&quot;: [{\&quot;status\&quot;: \&quot;ok\&quot;,\&quot;message\&quot;: {\&quot;infection_data\&quot;: {\&quot;malware\&quot;: {\&quot;customer_session_id\&quot;: \&quot;a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4\&quot;,\&quot;info\&quot;: {},\&quot;malware\&quot;: [{\&quot;risk_score\&quot;: 950,\&quot;name\&quot;: \&quot;Simba-brcl\&quot;,\&quot;key\&quot;: \&quot;simba\&quot;,\&quot;id\&quot;: \&quot;53\&quot;,\&quot;signature\&quot;: \&quot;Simba\&quot;,\&quot;targeted\&quot;: \&quot;maybe\&quot;,\&quot;collector\&quot;: \&quot;active_detection\&quot;,\&quot;pattern\&quot;: \&quot;912569c84efc49853e1f0ed773e446e6bca5d5b91e37b12f9a82725e21a48c18\&quot;},{\&quot;risk_score\&quot;: 1000,\&quot;name\&quot;: \&quot;Pumba-brcl\&quot;,\&quot;key\&quot;: \&quot;pumba\&quot;,\&quot;id\&quot;: \&quot;50\&quot;,\&quot;signature\&quot;: \&quot;Pumba\&quot;,\&quot;targeted\&quot;: \&quot;maybe\&quot;,\&quot;collector\&quot;: \&quot;passive_detection\&quot;,\&quot;pattern\&quot;: \&quot;912569c84efc49853e1f0ed773ekdflkjlk20024rjjkjlkjlkjkj89r98r00898\&quot;}],\&quot;malware_ids\&quot;: {\&quot;50\&quot;: {\&quot;risk_score\&quot;: 1000,\&quot;targeted\&quot;: \&quot;maybe\&quot;},\&quot;53\&quot;: {\&quot;risk_score\&quot;: 950,\&quot;targeted\&quot;: \&quot;maybe\&quot;}},\&quot;risk_score\&quot;: 1000,\&quot;timestamp\&quot;: \&quot;2015-07-08 12:29:33\&quot;,\&quot;encrypted_user_id\&quot;: \&quot;&lt;encrypted_user_ID&gt;\&quot;,\&quot;encryption_key_id\&quot;: \&quot;company.1.20170724\&quot;}},\&quot;device_data\&quot;: {\&quot;device_key\&quot;: \&quot;abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234\&quot;,\&quot;is_new\&quot;: true,\&quot;is_new_device_confidence_level\&quot;: 0.75,\&quot;v3\&quot;: {\&quot;screen_width\&quot;: 1920,\&quot;doc_location\&quot;: \&quot;\&quot;,\&quot;activeX\&quot;: 0,\&quot;dma_code\&quot;: 0,\&quot;ip_class\&quot;: \&quot;A\&quot;,\&quot;client_time_zone\&quot;: -180,\&quot;remote_addr\&quot;: \&quot;123.123.123.123\&quot;,\&quot;history_length\&quot;: 7,\&quot;js\&quot;: 1,\&quot;accept_encoding\&quot;: \&quot;gzip, deflate\&quot;,\&quot;counter\&quot;: 3,\&quot;machine_id\&quot;: \&quot;\&quot;,\&quot;region\&quot;: \&quot;05\&quot;,\&quot;screen_dpi\&quot;: 24,\&quot;client_language\&quot;: \&quot;en-US\&quot;,\&quot;isp\&quot;: \&quot;ISP\&quot;,\&quot;screen_height\&quot;: 1080,\&quot;first_time\&quot;: \&quot;2017-02-08 09:27:40\&quot;,\&quot;agent_key\&quot;: \&quot;\&quot;,\&quot;platform\&quot;: \&quot;Win32\&quot;,\&quot;cpu\&quot;: \&quot;Win32\&quot;,\&quot;ip_time_zone\&quot;: 120,\&quot;digest\&quot;: \&quot;abcd1234abcd1234abcd1234abcd1234abcd1234\&quot;,\&quot;screen_touch\&quot;: 0,\&quot;fonts\&quot;: \&quot;800648E87FC13E00BBAA18547FEC9690\&quot;,\&quot;file_upload_indicator\&quot;: 0,\&quot;mimes\&quot;: 4118237596,\&quot;file_upload\&quot;: 1,\&quot;longitude\&quot;: 34.764701843262,\&quot;navigator_props\&quot;: 3695045678,\&quot;browser_version\&quot;: \&quot;41.0.2228\&quot;,\&quot;client_charset\&quot;: \&quot;UTF-8\&quot;,\&quot;last_access\&quot;: \&quot;2017-02-08 09:27:40\&quot;,\&quot;browser\&quot;: \&quot;Chrome\&quot;,\&quot;charset\&quot;: 1,\&quot;accept_language\&quot;: \&quot;en-US,en;q=0.5\&quot;,\&quot;latitude\&quot;: 32.067798614502,\&quot;org\&quot;: \&quot;ISP\&quot;,\&quot;city\&quot;: \&quot;Tel Aviv-yafo\&quot;,\&quot;first_access\&quot;: \&quot;2017-02-08 09:27:40\&quot;,\&quot;country\&quot;: \&quot;ISR\&quot;,\&quot;continent_code\&quot;: \&quot;AS\&quot;,\&quot;country_name\&quot;: \&quot;\&quot;,\&quot;country_code\&quot;: \&quot;IL\&quot;,\&quot;country_code3\&quot;: \&quot;ISR\&quot;,\&quot;post_code\&quot;: \&quot;\&quot;,\&quot;x_forwarded_for\&quot;: \&quot;123.123.123.123\&quot;,\&quot;id\&quot;: 876137,\&quot;pinpoint_session\&quot;: \&quot;00009576042079220976\&quot;,\&quot;hashed_user_id\&quot;: \&quot;N/A\&quot;,\&quot;os\&quot;: \&quot;Windows 7\&quot;,\&quot;user_agent\&quot;: \&quot;Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36\&quot;,\&quot;application\&quot;: \&quot;66640095\&quot;,\&quot;cookie\&quot;: \&quot;0.2157162984033204\&quot;,\&quot;plugins\&quot;: 2075505175,\&quot;area_code\&quot;: 0,\&quot;accept\&quot;: \&quot;image/png,image/*;q=0.8,*/*;q=0.5\&quot;,\&quot;business\&quot;: \&quot;trusteerqa\&quot;}},\&quot;recommendation\&quot;: {\&quot;recommendation\&quot;: \&quot;allow_login_restrict\&quot;,\&quot;resolution_id\&quot;: \&quot;abcdefghijklmnopqrstuvwxyzabcdef\&quot;,\&quot;reason_id\&quot;: -1,\&quot;reason\&quot;: \&quot;reason text\&quot;,\&quot;risk_score\&quot;: 0},\&quot;risk_engine_recommendation\&quot;: {\&quot;risk_score\&quot;: 1,\&quot;reason_id\&quot;: 1,\&quot;recommendation\&quot;: \&quot;allow_login_restrict\&quot;,\&quot;reason\&quot;: \&quot;reason text\&quot;},\&quot;customer_session_id\&quot;: \&quot;&lt;CSID&gt;\&quot;}}],\&quot;CaseManagement\&quot;: {\&quot;ApplicationId\&quot;: \&quot;a04m000000BA7gtAAD\&quot;,\&quot;ApplicationStatus\&quot;: \&quot;Pending\&quot;},\&quot;IdAuthentication\&quot;: true}&quot;}&#xd;
+</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">devopenapi.velobank.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/system/crm/case</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">99d66a07-72e5-42ed-b296-98bb807c7609</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="cache-control" elementType="Header">
+                  <stringProp name="Header.name">cache-control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="accept-encoding" elementType="Header">
+                  <stringProp name="Header.name">accept-encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.3.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>true</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <sentBytes>true</sentBytes>
+                  <threadCounts>true</threadCounts>
+                  <idleTime>true</idleTime>
+                  <connectTime>true</connectTime>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="5 /api/system/customerverificationnra/documentdownload/9b22b4c0-b88c-40a7-a9f2-5248a3b9d226/City" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">devopenapi.velobank.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/system/customerverificationnra/documentdownload/9b22b4c0-b88c-40a7-a9f2-5248a3b9d226/City</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">269ee082-ceff-40a8-ab57-919b6fbc9f15</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="cache-control" elementType="Header">
+                  <stringProp name="Header.name">cache-control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="accept-encoding" elementType="Header">
+                  <stringProp name="Header.name">accept-encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.3.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>true</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <sentBytes>true</sentBytes>
+                  <threadCounts>true</threadCounts>
+                  <idleTime>true</idleTime>
+                  <connectTime>true</connectTime>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="Response Time Graph" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <Summariser guiclass="SummariserGui" testclass="Summariser" testname="Generate Summary Results" enabled="true"/>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>false</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>true</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder" enabled="true">
+        <stringProp name="ProxyControlGui.port">8888</stringProp>
+        <collectionProp name="ProxyControlGui.exclude_list">
+          <stringProp name="305776760">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|eot|otf|ttf|mp4|woff|woff2)[\?;].*</stringProp>
+          <stringProp name="1179605444">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|eot|otf|ttf|mp4|woff|woff2)</stringProp>
+          <stringProp name="1799639941">.*detectportal.firefox.com.*</stringProp>
+        </collectionProp>
+        <collectionProp name="ProxyControlGui.include_list"/>
+        <boolProp name="ProxyControlGui.capture_http_headers">true</boolProp>
+        <intProp name="ProxyControlGui.grouping_mode">0</intProp>
+        <boolProp name="ProxyControlGui.add_assertion">false</boolProp>
+        <stringProp name="ProxyControlGui.sampler_type_name"></stringProp>
+        <boolProp name="ProxyControlGui.sampler_redirect_automatically">false</boolProp>
+        <boolProp name="ProxyControlGui.sampler_follow_redirects">true</boolProp>
+        <boolProp name="ProxyControlGui.use_keepalive">true</boolProp>
+        <boolProp name="ProxyControlGui.sampler_download_images">false</boolProp>
+        <boolProp name="ProxyControlGui.regex_match">true</boolProp>
+        <stringProp name="ProxyControlGui.content_type_include"></stringProp>
+        <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
+        <boolProp name="ProxyControlGui.notify_child_sl_filtered">false</boolProp>
+        <stringProp name="ProxyControlGui.proxy_prefix_http_sampler_name"></stringProp>
+        <intProp name="ProxyControlGui.proxy_http_sampler_naming_mode">0</intProp>
+        <stringProp name="ProxyControlGui.proxy_pause_http_sampler"></stringProp>
+      </ProxyControl>
+      <hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>true</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>true</responseData>
+              <samplerData>true</samplerData>
+              <xml>true</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>true</responseHeaders>
+              <requestHeaders>true</requestHeaders>
+              <responseDataOnError>true</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <url>true</url>
+              <fileName>true</fileName>
+              <hostname>true</hostname>
+              <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">recording.xml</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

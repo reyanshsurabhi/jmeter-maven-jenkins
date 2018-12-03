@@ -1,0 +1,116 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.example</groupId>
+	<artifactId>velo_performance</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>velo_performance</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+			<!-- When the error states that "version 5 or 1.5" isn't supported, 
+			it's saying that Maven is trying to compile the java code using the 
+			JDK (java developer kit) version 1.5, ans it's not supported. -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<verbose>true</verbose>
+					<executable>${JAVA_HOME}\bin\javac</executable>
+					<compilerVersion>11.0.1</compilerVersion>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.lazerycode.jmeter</groupId>
+				<artifactId>jmeter-maven-plugin</artifactId>
+				<version>2.8.1</version>
+				<executions>
+					<execution>
+						<id>jmeter-tests</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jmeter</goal>
+						</goals>
+					</execution>
+					<!-- Fail build on errors in test -->
+			       	<execution>
+			            <id>jmeter-check-results</id>
+			            <goals>
+			                <goal>results</goal>
+			            </goals>
+			       </execution>
+				</executions>
+				<configuration>
+					<!-- This configuration is to specify jmeter script -->
+					<!-- testFilesDirectory>/testfiles/${module}</testFilesDirectory> -->
+					<testFilesIncluded>
+						<!-- <jMeterTestFile>${jmeter_test_file}.jmx</jMeterTestFile> -->
+						<jMeterTestFile>simpletest.jmx</jMeterTestFile>
+					</testFilesIncluded>
+					<resultsFileFormat>jtl</resultsFileFormat>
+					<appendResultsTimestamp>false</appendResultsTimestamp>
+					<!-- This configuration is to specify jmeter script, number -->
+					<!-- testFilesDirectory>/testfiles/${module}</testFilesDirectory> <testFilesIncluded> 
+						<jMeterTestFile>${jmeter_test_file}.jmx</jMeterTestFile> </testFilesIncluded> -->
+					<!-- By default the test results are saved in a file /target/jmeter/results/<testname>-<timestamp>.jtl 
+						Further processing is easier without timestamp though. -->
+					<testResultsTimestamp>false</testResultsTimestamp>
+					<propertiesUser>
+						<!-- To simplify debugging, it is advisable to adapt the loglevel. 
+							The jmeter logs are written to the file jmeter.log. -->
+						<overrideRootLogLevel>DEBUG</overrideRootLogLevel>
+						<!-- By default, the console output during a jmeter test run is suppressed. 
+							We want to display the progress using the listener "Generate Summary Results" 
+							(which periodically prints stats to stdout). Therefore we have to make sure, 
+							that the jmeter output is not suppressed. -->
+						<suppressJMeterOutput>false</suppressJMeterOutput>
+						<!-- If tests fail (e.g. a http-request running into a timeout), the 
+							corresponding maven goal also fails (and subsequent goals aren't executed 
+							anymore). We want to create graphs from test-results, no matter if some requests 
+							failed or not, so we ignore jmeter failures. -->
+						<ignoreResultFailures>true</ignoreResultFailures>
+						<Threadcount>${NUMBER_OF_USERS}</Threadcount>
+						<Rampup>${ramp-up_period}</Rampup>
+						<Loopcount>${LOOP_COUNT_DURATION}</Loopcount>
+						<Startup>${start_up_delay}</Startup>
+						<protocol>${protocol}</protocol>
+						<Tokengenerator>${token_uri}</Tokengenerator>
+						<tokengeneratorpath>${token_path}</tokengeneratorpath>
+						<Applicationuri>${API_URI}</Applicationuri>
+					</propertiesUser>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>de.codecentric</groupId>
+				<artifactId>jmeter-graph-maven-plugin</artifactId>
+				<version>0.1.0</version>
+				<configuration>
+					<inputFile>${project.build.directory}/jmeter/results/*.jtl</inputFile>
+					<graphs>
+						<graph>
+							<pluginType>ResponseTimesOverTime</pluginType>
+							<width>800</width>
+							<height>600</height>
+							<outputFile>${project.build.directory}/jmeter/results/ResponseTimesOverTime.png</outputFile>
+						</graph>
+					</graphs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
