@@ -167,14 +167,14 @@ under the License.
       <name>Human Readable Name for this Mirror.</name>
       <url>http://my.repository.com/repo/path</url>
     </mirror>
-	
+		-->
 	 <mirror>
         <id>central-no-ssl</id>
         <name>Central without ssl</name>
         <url>http://repo.maven.apache.org/maven2</url>
         <mirrorOf>central</mirrorOf>
     </mirror>
-	-->
+
   </mirrors>
 
   <!-- profiles
